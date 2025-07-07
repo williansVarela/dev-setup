@@ -24,3 +24,11 @@ if [ ! if_exists "brew" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Homebrew installed successfully."
 fi
+
+# Install all Programs from /programs
+if [ -d ~/.zsh/programs ] && [ "$(ls -A ~/.zsh/programs)" ]; then
+  for file in ~/.zsh/programs/*; do
+      source $file
+  done
+fi
+
