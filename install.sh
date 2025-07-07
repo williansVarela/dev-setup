@@ -11,3 +11,9 @@ trap 'echo "An error occurred. Exiting..."; exit 1' ERR
 
 # Load Helpers
 [[ -f ~/.zsh/helpers.zsh ]] && source ~/.zsh/helpers.zsh
+
+# Update and upgrade the system
+apt-get update && apt-get upgrade -y
+
+# Build tools
+apt-get install build-essential procps curl file git
