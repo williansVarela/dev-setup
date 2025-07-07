@@ -17,3 +17,10 @@ apt-get update && apt-get upgrade -y
 
 # Build tools
 apt-get install build-essential procps curl file git
+
+# Install homebrew
+if [ ! if_exists "brew" ]; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Homebrew installed successfully."
+fi
